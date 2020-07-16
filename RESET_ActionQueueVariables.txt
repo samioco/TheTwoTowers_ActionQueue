@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_ActionQueueVariables#CLASS 0#AL RESET_ActionQueueVariables {#CLASS 0
 #VAR ActionQueue {} {} VAR
 #T- ActionQueue_trigger
 #UNT "Alarm_Action"
@@ -37,4 +37,4 @@
 #ADDI ActionNextCmds "daytime"
 #ADDI ActionNextCmds "hands"
 #ADDI ActionNextCmds "armour"
-#CLASS 0
+#CLASS 0} _ActionQueue#CLASS 0

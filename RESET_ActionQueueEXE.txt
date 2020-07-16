@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_ActionQueueEXE#CLASS 0#AL RESET_ActionQueueEXE {#CLASS 0
 $CLASS = "Tools|ActionQueue|EXE"
 $Settings = "Tools|ActionQueue|Settings"
 
@@ -67,3 +67,4 @@ ActionShow
 
 
 #CLASS 0
+} _ActionQueue#CLASS 0

@@ -1,4 +1,4 @@
-#CLASS 0
+//RESET_ActionQueueSettings#CLASS 0#AL RESET_ActionQueueSettings {#CLASS 0
 $CLASS = "Tools|ActionQueue|Settings"
 $Settings = "Tools|ActionQueue|Settings"
 
@@ -18,3 +18,4 @@ SysMsg Executing Action: $action
 #T- ActionQueue_trigger
 
 #CLASS 0
+} _ActionQueue#CLASS 0
