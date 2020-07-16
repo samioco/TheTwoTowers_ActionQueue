@@ -1,0 +1,69 @@
+#CLASS 0
+$CLASS = "Tools|ActionQueue|EXE"
+$Settings = "Tools|ActionQueue|Settings"
+
+//new ActionAdd: if param already exists in stack, do nothing, else add
+#AL ActionAdd {
+#IF (!%ismember(%0,@ActionQueue)) {
+  #IF (!@ActionQueue) {#VAR ActionQueue {} {} var}
+  #ADDI ActionQueue %0
+}
+} $CLASS
+
+#AL AAdd {ActionAdd %0} $CLASS
+
+#AL ActionClear {
+#VAR ActionQueue {} {} var
+#T- ActionQueue_trigger
+#UNT "Action"
+SysMsg ActionQueue cleared.
+} $CLASS
+#AL AClear {ActionClear} $CLASS
+
+#AL ActionDelete {#DELI ActionQueue %0} $CLASS
+#AL ADel {ActionDelete} $CLASS
+
+#AL ActionExecute {
+#T- ActionQueue_trigger
+ActionShow
+#UNT "Action"
+$action=""
+#SW (%numitems(@ActionQueue)) {
+  $action=%item(@ActionQueue,%numitems(@ActionQueue))
+  #DELN ActionQueue %numitems(@ActionQueue)
+} ((@GrinderQueue) && (@GrinderQueue_i>0) && (@GrinderQueue_i<%numitems(@GrinderQueue))) {
+  SysMsg "ActionQueue empty!"
+  SysMsg "moving to next set in Grinder..."
+  $action="GrinderNextSet"
+} (@Stealer) {
+  SysMsg "ActionQueue empty!"
+  $action="Stealer"
+}
+#IF ($action) {
+  SysMsg executing action: $action
+  #EXE {$action}
+}
+} $CLASS
+
+#AL AExe {
+ActionExecute
+} $CLASS
+
+#AL ActionNext {
+ActionShow
+#T+ ActionQueue_trigger
+#EXE {%item(@ActionNextCmds,%random(1,%numitems(@ActionNextCmds)))}
+} $CLASS
+
+#AL ANext {ActionNext} $CLASS
+
+#AL ActionPop {#DELN ActionQueue %numitems(@ActionQueue);ActionShow} $CLASS
+#AL APop {ActionPop} $CLASS
+
+#AL ActionShow {SysMsg action Queue:;#loop %numitems(@ActionQueue) {SysMsg %i: %item(@ActionQueue,%i)};SysMsg {}} $CLASS
+
+#AL AStat {ActionShow} $CLASS
+#AL AShow {ActionShow} $CLASS
+
+
+#CLASS 0

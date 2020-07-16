@@ -1,0 +1,20 @@
+#CLASS 0
+$CLASS = "Tools|ActionQueue|Settings"
+$Settings = "Tools|ActionQueue|Settings"
+
+#TR ActionQueue_trigger {{@Messages_ActionNext}} {
+#T- ActionQueue_trigger
+#UNT "Action"
+$action=""
+$wait=0
+#IF (@Stealer || @Grinder) {$wait=%random(1,2)*1000}
+SysMsg Waiting: $wait ms
+#WAIT $wait
+SysMsg Executing Action: $action
+#EXE {"ActionExecute"}
+//#ALA "Action" +$wait {SysMsg executing action...;#EXE {"ActionExecute"}} $CLASS
+} $Settings
+
+#T- ActionQueue_trigger
+
+#CLASS 0

@@ -1,0 +1,40 @@
+#CLASS 0
+#VAR ActionQueue {} {} VAR
+#T- ActionQueue_trigger
+#UNT "Alarm_Action"
+
+#VAR Messages_ActionNext {} {} VAR
+#ADDI Messages_ActionNext "You are carrying the following on your person:|You are not carrying any items right now."
+#ADDI Messages_ActionNext "You quickly feel about and find the following items:"
+#ADDI Messages_ActionNext "Current exp:"
+#ADDI Messages_ActionNext "Common Skills:"
+#ADDI Messages_ActionNext "Age:"
+#ADDI Messages_ActionNext "The Two Towers has been up for"
+#ADDI Messages_ActionNext "You are leading a party."
+#ADDI Messages_ActionNext "You are a member of"
+#ADDI Messages_ActionNext "Usage: party"
+#ADDI Messages_ActionNext "You are too drunk"
+#ADDI Messages_ActionNext "YoU aRE MUch tOo DRunK tO TakE iNvenTory."
+#ADDI Messages_ActionNext "It is very early in the morning in Middle-earth."
+#ADDI Messages_ActionNext "You guess the day will start soon in Middle-earth."
+#ADDI Messages_ActionNext "It is mid morning in Middle-earth."
+#ADDI Messages_ActionNext "It is noon in Middle-earth."
+#ADDI Messages_ActionNext "It is afternoon in Middle-earth."
+#ADDI Messages_ActionNext "It is late in the evening in Middle-earth."
+#ADDI Messages_ActionNext "The night is still young in Middle-earth."
+#ADDI Messages_ActionNext "It is night in Middle-earth."
+#ADDI Messages_ActionNext "You have two hands."
+#ADDI Messages_ActionNext "Your party status is:"
+#ADDI Messages_ActionNext "You are not in a party."
+#ADDI Messages_ActionNext "Protecting"
+
+#VAR ActionNextCmds {} {} VAR
+#ADDI ActionNextCmds "i"
+#ADDI ActionNextCmds "score"
+#ADDI ActionNextCmds "skills"
+#ADDI ActionNextCmds "legend me"
+#ADDI ActionNextCmds "uptime"
+#ADDI ActionNextCmds "daytime"
+#ADDI ActionNextCmds "hands"
+#ADDI ActionNextCmds "armour"
+#CLASS 0
